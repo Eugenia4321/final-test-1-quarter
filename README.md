@@ -36,26 +36,25 @@
 >
 >{
 >
-    >for (int i = 0; i < inputArray.Length; i++)
-   >
-    >{
-        >
-        >if (inputArray[i].Length <= itemSize)
-       >
-       >{
+>for (int i = 0; i < inputArray.Length; i++)
 >
-            >Array.Resize(ref outputArray, outputArray.Length + 
-            1);
-            >                      
-            >outputArray[outputArray.Length-1]=inputArray[i];
-             >
-                >}
-                >
-   > }
-   >
- >return outputArray;
-    >
-    >}
+>{
+>
+>if (inputArray[i].Length <= itemSize)
+>
+>{
+>
+>Array.Resize(ref outputArray, outputArray.Length +  1);
+>                      
+>outputArray[outputArray.Length-1]=inputArray[i];
+>
+>}
+>
+> }
+>
+>return outputArray;
+>
+>}
 
 Здесь мы используем *Array.Resize()* , который позволяет изменять размер массива, и при каждом нахождении элемента c размером <= 3, мы изменяем размер массива outputArray на +1 и в последнему пустому элементу присваиваем значение найденного элемента.
 
